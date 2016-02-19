@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Winpop组件Demo</title>
+    <link rel="stylesheet" href="./winpop-dq.css">
+<style>
+body {
+    font: 14px/1.5 '\5fae\8f6f\96c5\9ed1', Arial, Tahoma, sans-serif;
+}
+</style>
+</head>
+<body>
+<span class="dq-alert">自定义Alert控件</span>&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="dq-confirm">自定义Confirm组件</a>
+
+<!-- <div class="winpop-mask"></div>
+<div class="winpop-main">
+	<p class="winpop-content">
+		的看的看得开的看
+	</p>
+	<div class="winpop-btns">
+		<button class="pop-btn alert-btn">确定</button>
+		<button class="pop-btn confirm-false">取消</button>
+		<button class="pop-btn confirm-true">确定</button>
+	</div>
+</div> -->
+
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="./winpop-dq2.js"></script>
+
+<script>
+$(function(){
+	var obj = new Winpop();
+
+	$('body').on('click', '.dq-alert', function(event) {
+		obj.alert('自定义Alert控件');
+
+	}).on('click', '.dq-confirm', function(event) {
+		obj.confirm('关闭自定义Confirm组件吗？', 
+			function(flag){
+				if(flag){ 
+					console.log('true') 
+				}else{
+					console.log('false')
+				}
+			});
+	});
+});
+</script>
+</body>
+</html>
